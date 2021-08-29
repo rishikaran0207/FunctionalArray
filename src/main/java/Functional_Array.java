@@ -2,29 +2,31 @@ package com.Bridgelabz;
 import java.util.Scanner;
 public class Functional_Array {
     public static void main(String[] args) {
-        Scanner ar=new Scanner(System.in);
-        System.out.println("\nEnter the no of rows and columns:");
-        System.out.println("rows:");
-        int m =ar.nextInt();
-        System.out.println("column");
-        int n =ar.nextInt();
-        int[][] arr=new int[m][n];
-        for(int i=0;i<m;i++)
+        Scanner arr=new Scanner(System.in);
+        System.out.println("Enter the integer to be in array:");
+        int len=arr.nextInt();
+        System.out.println("Enter a value for array:");
+        int[] ar = new int[len];
+        for(int i=0;i<len;i++)
         {
-            for(int j=0;j<n;j++)
-            {
-                System.out.println("Enter the value of "+i+" row , "+j+" column:");
-                arr[i][j]=ar.nextInt();
-            }
+            ar[i]=arr.nextInt();
         }
-        System.out.println("\nThe value in matrix is");
-        for(int i=0;i<m;i++)
-        {
-            for(int j=0;j<n;j++)
+        int count=0;
+        for(int i=0;i<len-2;i++) {
+            for (int j = i + 1; j < len - 1; j++)
             {
-                System.out.println("\narr["+i+"]["+j+"]: "+arr[i][j]);
+                for(int k=j+1;k<len;k++)
+                {
+                    if(ar[i] + ar[j] + ar[k] == 0)
+                    {
+                        System.out.println("("+ar[i]+" , "+ar[j]+" , "+ar[k]+")");
+                        count++;
+                    }
+                }
             }
-        }
 
+        }
+        System.out.println("the distinct triplets equal to zero");
+        System.out.println("There are "+count+" distinct triplets");
     }
 }
