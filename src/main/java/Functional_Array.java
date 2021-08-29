@@ -2,19 +2,15 @@ package com.Bridgelabz;
 import java.util.Scanner;
 public class Functional_Array {
     public static void main(String[] args) {
-        Scanner q =new Scanner(System.in);
-        System.out.println("To find the roots of (a*X*X + b*X + c)");
-        System.out.println("Enter the value for a,b,c");
-        System.out.println("a:");
-        double a=q.nextDouble();
-        System.out.println("b:");
-        double b=q.nextDouble();
-        System.out.println("c:");
-        double c=q.nextDouble();
-        double delta= ( b * b )-( 4 * a * c);
-        int root1=(int) ( -b + (int)(Math.sqrt((delta))/(2*a)));
-        int root2= (int) (-b - (int)(Math.sqrt((delta))/(2*a)));
-        System.out.println("The roots are (x"+root1+") (x"+root2+")");;
+        Scanner w= new Scanner(System.in);
+        System.out.println("\n\nNote: the formula is not valid if t is larger than 50 in absolute value or if v is larger than 120 or less than 3 (you may assume that the values you get are in that range).");
+        System.out.println("\n\nEnter the temperature(t) in Fahrenheit and Wind spped(v) in miles per hour");
+        System.out.println("Temperature(t):");
+        double t = w.nextDouble();
+        System.out.println("Wind speed(v):");
+        double v = w.nextDouble();
+        double W=35.74 + (0.6215 * t) +( ( (0.4275 * t ) -35.75) * (Math.pow(v,0.16)));
+        System.out.println("\n\nThe value of wind chill is "+W);
     }
 
 }
